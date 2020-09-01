@@ -67,11 +67,19 @@
   height: 100%;
 }
 
-.todo__input > input {
+.todo__input > form {
+  width: 100%;
+}
+.todo__input > form > input:focus {
+  outline: none;
+
+}
+
+.todo__input > form > input {
+  width: 100%;
   border: none;
   border-radius: 10px;
   height: 30px;
-  width: 100%;
 }
 
 .todo__list {
@@ -125,6 +133,8 @@
 @media (max-width: 720px) {
   .todo {
     flex-direction: column;
+    width: 90%;
+    height: 400px;
   }
   .todo__list {
     margin-left: 0;
