@@ -51,8 +51,11 @@ function App() {
                     style={{
                       marginLeft: "16px",
                     }}
-                  >
+                    >
                     <input
+                      style={{
+                        marginRight: "16px",
+                      }}
                       type="checkbox"
                       onChange={() => handleRemove(todo)}
                     />
