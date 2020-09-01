@@ -8,7 +8,6 @@
 }
 
 .App {
-  
   font-family: "Roboto", sans-serif;
   text-align: center;
   display: flex;
@@ -31,6 +30,7 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,12 +62,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.w-100-h-100 {
   width: 100%;
   height: 100%;
-
 }
 
 .todo {
@@ -82,8 +78,6 @@
 }
 
 .todo__input {
-  width: 100%;
-  height: 100%;
   caret-color: var(--accent-2);
 }
 
@@ -101,6 +95,7 @@
 .todo__input > form > input {
   width: 100%;
   border: none;
+  color: var(--text-body);
   border-bottom: 3px solid var(--text-body);
   background-color: transparent;
   height: 30px;
@@ -108,17 +103,13 @@
 
 .todo__nothing {
   color: var(--text-body);
-  width: 100%;
-  height: 100%;
 }
 
 .todo__list {
   background-color: var(--accent-1);
   margin-left: 16px;
-  height: 100%;
   overflow-y: scroll;
   padding: 16px;
-  width: 100%;
   border-radius: 10px;
 }
 
