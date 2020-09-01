@@ -10,7 +10,7 @@ function App() {
   };
 
   const handleRemove = (todoToDelete) => {
-    setTodos(todos.filter((item) => item != todoToDelete));
+    setTodos(todos.filter((item) => item !== todoToDelete));
   };
 
   const handleSubmit = (e) => {
@@ -21,37 +21,39 @@ function App() {
 
   return (
     <div className="App">
+      <div className="todo centered">
       <div className="header">Welcome to the App</div>
-      <div className="todo">
-        <div className="todo__input">
-          <form onSubmit={handleSubmit}>
+        <div className="todo__input centered">
+          <form onSubmit={handleSubmit} className="w-100-h-100 centered">
             <input
               type="text"
               value={todo}
               placeholder="Type here to add item"
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
             />
           </form>
         </div>
-        <div className="todo__list">
+        <div className="todo__list centered">
           <ul>
             {(todos.length > 0 || todo.length > 0) && (
               <li key="list-header">
-                <div>Task</div>
-                <div>Delete</div>
+                <p>Task</p>
+                <p>Delete</p>
               </li>
             )}
             {todos.length === 0 && todo.length === 0 ? (
-              <div>NOTHING TO DO!</div>
+              <div className="todo__nothing centered">
+                <p>NOTHING TO DO!</p>
+              </div>
             ) : (
               todos.map((todo, i) => (
                 <li key={"todo-" + i}>
-                  <div>{todo}</div>
+                  <p>{todo}</p>
                   <div
                     style={{
                       marginLeft: "16px",
                     }}
-                    >
+                  >
                     <input
                       style={{
                         marginRight: "16px",
@@ -63,11 +65,11 @@ function App() {
                 </li>
               ))
             )}
-            {todo.length > 0 ? (
+            {todo.length > 0 && (
               <li key={"new-todo"}>
                 <div>{todo}</div>
               </li>
-            ) : null}
+            )}
           </ul>
         </div>
       </div>
